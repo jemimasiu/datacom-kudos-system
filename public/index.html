@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datacom Kudos</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="wrapper header-content">
+        <h1>Team Kudos</h1>
+        <p class="header-subtitle">
+          Celebrate the wins. Share a note of appreciation with your teammates.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrapper app-main">
+      <section class="card">
+        <h2>Give Kudos</h2>
+        <form id="kudos-form" novalidate>
+          <div class="form-row">
+            <label for="recipient">Send to</label>
+            <select id="recipient" name="recipient" required>
+              <option value="" disabled selected>Select a teammate</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              maxlength="500"
+              placeholder="Let them know why you appreciate them…"
+              required
+            ></textarea>
+            <div class="field-hint">
+              <span id="message-count">0</span>/500 characters
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Send Kudos</button>
+          </div>
+
+          <p class="form-feedback" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Recent Kudos</h2>
+          <button id="refresh" type="button" class="ghost-button">Refresh</button>
+        </div>
+        <ul id="kudos-feed" class="kudos-feed"></ul>
+        <p id="empty-state" class="empty-state" hidden>
+          No kudos yet. Be the first to celebrate a teammate!
+        </p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="wrapper">
+        <small>&copy; Datacom 2025 · Internal Use Only</small>
+      </div>
+    </footer>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
+
